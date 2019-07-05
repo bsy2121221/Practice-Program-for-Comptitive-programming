@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ull unsigned long long
+#define MODULO 1000000007
+
+ull PowMod(ull n)
+{
+    ull ret = 1;
+    ull a = 2;
+    while (n > 0) {
+        if (n & 1) ret = ret * a % MODULO;
+        a = a * a % MODULO;
+        n >>= 1;
+    }
+    return ret;
+}
+int main()
+{
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	ull k,res;
+	cin>>k;
+res=PowMod(k-1);
+cout<<(10*res)%1000000007;
+cout<<endl;
+	}
+	return 0;
+}

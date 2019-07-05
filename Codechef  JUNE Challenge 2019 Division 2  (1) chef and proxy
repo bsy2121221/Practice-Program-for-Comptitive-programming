@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t,ans2;
+	float a,count=0;
+	cin>>t;
+	while(t--)
+	{
+		float a;
+		int d,p=0,f=0;
+		cin>>d;
+		char s[d];
+		for(int i=0;i<d;i++)
+		cin>>s[i];
+		
+		for(int i=0;i<d;i++)
+		{
+			if(s[i]=='P')
+			count++;
+		}
+		a=(count/d)*100;
+		if(a>=75)
+		cout<<"0";
+		else
+		{
+			for(int i=2;i<d-2;i++)
+			{
+				if(s[i]!='P')
+				{
+					if((s[i-1]=='P' || s[i-2]=='P') && (s[i+1]=='P' || s[i+2]=='P'))
+					{
+					count++;
+					f++;
+					}
+					a=(count/d)*100;
+					
+					if(a>=75)
+					{
+						cout<<f;
+						p=1;
+						break;
+					}
+				}
+				
+			}
+			if(p==0)
+			cout<<"-1";
+		}
+	cout<<endl;	
+	count=0;
+		
+	}
+}

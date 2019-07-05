@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	unsigned long long int n,add=0;
+		cin>>n;
+	unsigned long long int a,ans;
+		a=n;
+		while(n)
+		{
+			long long int rem=n%10;
+			add=add+rem;
+			n=n/10;
+		}
+		ans=10*a+(10-add%10)%10;
+		
+		cout<<ans;
+		cout<<endl;
+	}
+	return 0;
+}

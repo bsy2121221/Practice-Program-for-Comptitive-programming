@@ -1,0 +1,14 @@
+# cook your dish here
+def f(n,k):
+    md = 1000000007
+    d = n-1
+    a = k-n
+    nt = ((k-1)//d)
+    sm = (nt*(2*a-(nt-1)*(n-1))//2)
+    sit = (k-1)
+    return (sm+sit)%md
+t = int(input())
+for i in range(t):
+    n, k= map(int,input().split(" "))
+    rst = f(n,k)
+    print(rst)

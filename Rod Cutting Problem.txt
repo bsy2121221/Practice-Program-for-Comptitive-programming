@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+int rod_cut(int arr[],int n){
+    if(n==0)
+    return 0;
+    
+    int q=INT_MIN;
+    
+    for(int i=0;i<n;i++){
+        q=(max(q,arr[i]+rod_cut(arr,n-i)));
+    }
+    return q;
+    
+}
+
+int main() {
+	int arr[]={ 1,5,8,9,10,17,17,20,24,30};
+	int n=4;
+	
+	cout<<rod_cut(arr,n);
+	
+	return 0;
+}
